@@ -33,7 +33,7 @@ function centerAspectCrop(
     )
   }
 
-function Cropper() {
+const GifCrop: React.FC = () => {
     const [imgSrc, setImgSrc] = useState('')
     const previewCanvasRef = useRef<HTMLCanvasElement>(null)
     const imgRef = useRef<HTMLImageElement>(null)
@@ -46,8 +46,6 @@ function Cropper() {
       length: 0,
       status: false,
     });
-  
-
     const onSelectFile = useCallback(async (e: React.ChangeEvent<HTMLInputElement>)=>{
       try {
         if (e.target.files && e.target.files.length > 0) {
@@ -88,7 +86,6 @@ function Cropper() {
 
       } catch (error) {}
     }, [])
-
 
     const onImageLoad = useCallback((e: React.SyntheticEvent<HTMLImageElement>)=>{
       if (aspect) {
@@ -176,6 +173,7 @@ function Cropper() {
               <ReactCrop
                   crop={crop}
                   onChange={(c, percentCrop) => {
+                      console.log(c);
                       setCrop(c)
                   }}
                   onComplete={(c) => {
@@ -207,4 +205,4 @@ function Cropper() {
     )
 }
 
-export default Cropper;
+export default GifCrop;

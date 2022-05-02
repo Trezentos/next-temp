@@ -2,7 +2,7 @@ import React from 'react'
 
 
 import 'react-image-crop/dist/ReactCrop.css'
-import Cropper from '../components/Cropper'
+import Cropper from '../components/GifCrop'
 
 export default function App() {
 
